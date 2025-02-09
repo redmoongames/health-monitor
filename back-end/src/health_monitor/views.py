@@ -2,7 +2,6 @@ from django.http import JsonResponse
 from .models import HealthStat
 
 def health_stat_view(request):
-    # Get the latest health stat entry
     try:
         stat = HealthStat.objects.latest('timestamp')
         data = {
